@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/shared/network/local/componant/navigate_to.dart';
+import 'package:shop_app/shared/network/local/componant/text_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../modules/login/login_screen.dart';
@@ -42,11 +43,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-         TextButton(onPressed: (){
-           navigateAndFinsh(context: context, wiget: LoginScreen());
-         }, child: Text(
-          'SKIP'
-         ),),
+          defuiltTextButtom(
+            onpressed: () {
+              navigateAndFinsh(context: context, wiget: LoginScreen());
+            },
+             text:'SKiP', 
+          ),
+        
         ],
       ),
       body: Column(

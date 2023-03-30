@@ -6,14 +6,17 @@ class DioHelper {
   static init() {
     dio = Dio(
       BaseOptions(
-        baseUrl: 'http://newsapi.org/',
+        baseUrl: 'https://student.valuxapps.com/api/',
         receiveDataWhenStatusError: true,
+        headers: {
+          'Content-Type':'application/json'
+        }
       ),
     );
   }
 
   //method url
-  Future<Response>? getdata({
+  Future<Response>? getData({
     required String path,
     required  map,
   }) async {
@@ -22,8 +25,21 @@ class DioHelper {
       queryParameters: map,
     );
   }
+
+
+
+  static Future<Response>? postData({
+    required String path,
+    Map<String , dynamic>?  map,
+    required Map<String , dynamic>  data,
+  }) async {
+    return await dio!.post(
+      path,
+      queryParameters: map,
+      data: data,
+    );
+  }
 }
 
 
 
-// https://newsapi.org/v2/everything?q=teslamak

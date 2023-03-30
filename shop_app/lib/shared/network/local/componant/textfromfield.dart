@@ -7,9 +7,9 @@ Widget defaultTextFormField({
   VoidCallback? Function(String?)? onChanged,
   String? Function(String?)? validater,
   IconData? suffix,
-  IconData? prefixIcon,
+  IconData? prefixIcone,
   bool isPassword = false,
-  VoidCallback? onTap, required IconData prprefixIcon,
+  VoidCallback? onTap,
 }) =>
     TextFormField(
       onTap: onTap,
@@ -26,7 +26,7 @@ Widget defaultTextFormField({
             Radius.circular(20),
           ),
         ),
-        prefixIcon: Icon(prefixIcon),
+        prefixIcon: Icon(prefixIcone),
         suffix: Icon(suffix),
       ),
     );
