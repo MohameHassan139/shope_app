@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/on_poarding/onboarding_screen.dart';
-import 'package:shop_app/shared/bloc_observes.dart';
 import 'package:shop_app/shared/themes/light_mode.dart';
-import 'package:bloc/bloc.dart';
 
 void main() {
-  Bloc.observer = MyBlocObserver();
+  
   runApp(MyApp());
 }
 
