@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 Widget defaultButton({
   double width = double.infinity,
   Color color =  Colors.grey,
-  required Function onPressed,
+  required VoidCallback? onPressed,
   required String text,
 }) =>
     Container(
@@ -18,7 +18,7 @@ Widget defaultButton({
                 ),
       
       child: MaterialButton(
-        onPressed: onPressed(),
+        onPressed: onPressed,
         child: Text(
           text.toUpperCase(),
           style: TextStyle(

@@ -30,6 +30,7 @@ class LoginScreen extends StatelessWidget {
                     children: [
                       SizedBox(
                         height: 70,
+                        width: double.infinity,
                       ),
                       Container(
                         height: 450,
@@ -57,7 +58,7 @@ class LoginScreen extends StatelessWidget {
                                         color: Colors.black,
                                       ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 30,
                                 ),
                                 defaultTextFormField(
@@ -65,7 +66,7 @@ class LoginScreen extends StatelessWidget {
                                   textController: controllerEmail,
                                   prefixIcone: Icons.email,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 defaultTextFormField(
@@ -77,16 +78,19 @@ class LoginScreen extends StatelessWidget {
                                   isPassword: true,
                                   labelText: 'password',
                                   textController: controllerPassword,
-                                  prefixIcone: Icons.remove_red_eye,
+                                  prefixIcone: Icons.lock,
                                   suffix: Icons.remove_red_eye,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 30,
                                 ),
                                 ConditionalBuilder(
-                                  condition: state is! LoginInatialState,
+                                  condition: state is! LoginLoadingState,
                                   builder: (context) => defaultButton(
                                     onPressed: () {
+                                      print('buttom!!!!!!!!!!!');
+                                      print(controllerEmail.text);
+                                      print(controllerPassword.text);
                                       LoginCubit.get(context).login(
                                         email: controllerEmail.text,
                                         password: controllerPassword.text,
@@ -94,17 +98,18 @@ class LoginScreen extends StatelessWidget {
                                     },
                                     text: 'LOGIN',
                                   ),
-                                  fallback: (context) => Center(
+                                  fallback: (context) => const Center(
                                       child: CircularProgressIndicator()),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 30,
                                 ),
                                 Row(
                                   children: [
-                                    Text('you don\'t have account'),
+                                    const Text('you don\'t have account'),
                                     defuiltTextButtom(
                                       onpressed: () {
+                                       
                                         navigateTo(
                                             context: context,
                                             wiget: RegisterScreen());

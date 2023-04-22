@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/on_poarding/onboarding_screen.dart';
+import 'package:shop_app/shared/bloc_observes.dart';
 import 'package:shop_app/shared/themes/light_mode.dart';
+import 'package:bloc/bloc.dart';
 
 void main() {
-  runApp( MyApp());
+  Bloc.observer = MyBlocObserver();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,10 +16,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      themeMode:ThemeMode.light ,
+      themeMode: ThemeMode.light,
       theme: lightThem(),
-      
-      home:  OnBoardingScreen(),
+      home: OnBoardingScreen(),
     );
   }
 }
