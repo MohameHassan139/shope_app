@@ -4,8 +4,8 @@ class LoginInfo {
   late UserData? data;
 
   LoginInfo.fromjson(Map<String, dynamic> json) {
-    this.status = json['status'];
-    this.message = json['message'];
+    status = json['status'];
+    message = json['message'];
      data=json['data'] == null?null: UserData.fromjson(json['data']);
   }
 }
@@ -21,14 +21,14 @@ class UserData {
   late String token;
 
   UserData.fromjson(Map<String, dynamic> json){
-    this.id = json['id'];
-    this.name = json['name'];
-    this.email = json['email'];
-    this.phone = json['phone'];
-    this.image = json['image'];
-    this.points = json['points'];
-    this.credit = json['credit'];
-    this.token = json['token'];
+    id = json['id'];
+    name = json['name'];
+    email = json['email'];
+    phone = json['phone'];
+    image = json['image'];
+    points = json['points'];
+    credit = json['credit'];
+    token = json['token'];
   }
 
 

@@ -43,7 +43,7 @@ dev_dependencies:
     sdk: flutter
   smooth_page_indicator: ^1.0.1
   shared_preferences: ^2.0.20
-  dio: ^5.1.0
+ 
   flutter_bloc: ^8.1.2
   bloc: ^8.1.1
   conditional_builder_null_safety: ^0.0.6

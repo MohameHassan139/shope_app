@@ -25,7 +25,7 @@ class LoginScreen extends StatelessWidget {
             key: formkey,
             child: Column(
               children: [
-                SizedBox(
+               const SizedBox(
                   height: 70,
                   width: double.infinity,
                 ),
@@ -33,7 +33,7 @@ class LoginScreen extends StatelessWidget {
                   height: 450,
                   width: 350,
                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                  decoration: BoxDecoration(
+                  decoration:const BoxDecoration(
                     color: Color.fromARGB(198, 218, 218, 133),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(50),
@@ -102,15 +102,15 @@ class LoginScreen extends StatelessWidget {
                                       email: controllerEmail.text,
                                       password: controllerPassword.text,
                                     );
-                                    Fluttertoast.showToast(
-                                        msg: controller.loginModel.message,
-                                        toastLength: Toast.LENGTH_LONG,
-                                        gravity: ToastGravity.BOTTOM,
-                                        timeInSecForIosWeb: 5,
-                                        backgroundColor: Colors.red,
-                                        textColor: Colors.white,
-                                        fontSize: 16.0);
-                                    print(controller.loginModel.message);
+                                    // Fluttertoast.showToast(
+                                    //     msg: controller.loginModel.message,
+                                    //     toastLength: Toast.LENGTH_LONG,
+                                    //     gravity: ToastGravity.BOTTOM,
+                                    //     timeInSecForIosWeb: 5,
+                                    //     backgroundColor: Colors.red,
+                                    //     textColor: Colors.white,
+                                    //     fontSize: 16.0);
+                                    // print(controller.loginModel.message);
                                   }
                                 },
                                 text: 'LOGIN',

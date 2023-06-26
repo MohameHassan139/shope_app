@@ -14,7 +14,7 @@ class LoginController extends GetxController {
     required String password,
   }) {
     state = false.obs;
-    Http.postData(path: 'login', email: email, password: password)
+    Http.login(path: 'login', email: email, password: password)
         .then((value) async {
       state = true.obs;
       loginModel =await  LoginInfo.fromjson(value);
